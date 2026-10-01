@@ -1,0 +1,263 @@
+/* HEXAGONE ENERGIE : feuille unique (maquette v1, charte de Mehdi, 01/10/2026) */
+:root {
+  /* Couleurs mesurées sur le logo fourni par Mehdi */
+  --nuit: #12252c;          /* fond sombre de la charte */
+  --nuit-2: #1a333c;        /* variante pour cartes sur fond sombre */
+  --ardoise: #3c5a64;       /* texte secondaire sombre */
+  --bleu: #2d7a4a;          /* vert foncé : liens et textes verts sur blanc (AA) */
+  --ciel: #66af78;          /* vert de la charte : décor, icônes, sur fond sombre */
+  --soleil: #66af78;        /* appels à l'action : vert charte avec texte --nuit */
+  --papier: #f0f3fa;        /* fond clair de la charte */
+  --blanc: #ffffff;
+  --texte: #12252c;
+  --texte-doux: #4a5d64;
+  --trait: #dde3ea;
+
+  --police: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --police-titre: "Montserrat", "Inter", system-ui, sans-serif;
+  --rayon: 6px;
+  --largeur: 1180px;
+  --ombre: 0 1px 2px rgba(14, 42, 59, .06), 0 8px 24px rgba(14, 42, 59, .06);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--police); font-size: 1.0625rem; line-height: 1.6; color: var(--texte); background: var(--blanc); }
+img, svg { display: block; max-width: 100%; }
+a { color: var(--bleu); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--soleil); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--police-titre); color: var(--nuit); line-height: 1.18; margin: 0 0 .6em; }
+h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 800; letter-spacing: -.02em; }
+h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 800; letter-spacing: -.01em; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p { margin: 0 0 1em; }
+
+.conteneur { max-width: var(--largeur); margin: 0 auto; padding: 0 20px; }
+.lien-evitement { position: absolute; left: -9999px; }
+.lien-evitement:focus { left: 16px; top: 16px; z-index: 100; background: var(--soleil); color: var(--nuit); padding: 8px 14px; }
+
+/* Bandeau maquette */
+.bandeau-maquette { background: #fff4cc; color: #5c4400; font-size: .9rem; text-align: center; padding: 6px 16px; border-bottom: 1px solid #f0d77a; }
+
+/* En-tête */
+.entete { position: sticky; top: 0; z-index: 50; background: #12252c; border-bottom: 1px solid rgba(255,255,255,.08); }
+.entete .conteneur { display: flex; align-items: center; gap: 24px; min-height: 72px; }
+.logo { display: flex; align-items: center; text-decoration: none; }
+.logo img { height: 40px; width: auto; }
+.logo__nom { font-weight: 800; letter-spacing: .04em; font-size: 1.05rem; line-height: 1.1; }
+.logo__nom small { display: block; font-weight: 500; letter-spacing: 0; font-size: .72rem; color: var(--texte-doux); }
+.nav { margin-left: auto; }
+.nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+.nav a { color: #dbe5ea; text-decoration: none; font-weight: 600; font-size: .95rem; }
+.nav a:hover { color: var(--ciel); }
+
+/* Boutons */
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: var(--rayon); font-weight: 700; text-decoration: none; border: 2px solid transparent; }
+.btn--soleil { background: var(--soleil); color: var(--nuit); }
+.btn--soleil:hover { background: #7cc28d; }
+.btn--contour { border-color: rgba(255,255,255,.7); color: var(--blanc); }
+.btn--contour:hover { background: rgba(255,255,255,.1); }
+.btn--bleu { background: var(--ciel); color: var(--nuit); }
+.btn--bleu:hover { background: #7cc28d; }
+
+/* Héros */
+.heros { position: relative; overflow: hidden; background: radial-gradient(ellipse 60% 70% at 85% 30%, rgba(102,175,120,.18), transparent 70%), radial-gradient(ellipse 50% 60% at 10% 110%, rgba(60,110,150,.22), transparent 70%), var(--nuit); color: #dbe7ef; padding: 96px 0 80px; }
+.heros__motif { position: absolute; inset: 0; pointer-events: none; }
+.heros__anneaux { position: absolute; right: 0; top: 0; width: 640px; height: auto; opacity: .9; pointer-events: none; }
+.heros .conteneur { position: relative; display: grid; grid-template-columns: 1.25fr .75fr; gap: 48px; align-items: center; }
+.heros h1 { color: var(--blanc); }
+.heros h1 span { color: var(--soleil); }
+.surtitre { display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ciel); margin-bottom: 14px; }
+.heros__chapo { font-size: 1.18rem; max-width: 40em; }
+.heros__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.fiche { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: var(--rayon); padding: 22px 24px; }
+.fiche h2 { color: var(--blanc); font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; }
+.fiche dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; font-size: .95rem; }
+.fiche dt { color: #9fb7c7; }
+.fiche dd { margin: 0; color: var(--blanc); font-weight: 600; }
+
+/* Bande de preuves */
+.preuves { background: var(--papier); border-bottom: 1px solid var(--trait); }
+.preuves ul { list-style: none; margin: 0; padding: 22px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.preuves li { display: flex; gap: 12px; align-items: flex-start; font-size: .95rem; color: var(--texte-doux); }
+.preuves strong { display: block; color: var(--nuit); font-size: 1rem; }
+.hexa-puce { flex: 0 0 auto; width: 26px; height: 26px; margin-top: 2px; }
+
+/* Sections */
+.section { padding: 80px 0; }
+.section--papier { background: var(--papier); }
+.section__tete { max-width: 46em; margin-bottom: 40px; }
+.section__tete p { color: var(--texte-doux); font-size: 1.1rem; }
+
+/* Cartes publics */
+.grille-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.carte { background: var(--blanc); border: 1px solid var(--trait); border-radius: var(--rayon); padding: 28px; box-shadow: var(--ombre); display: flex; flex-direction: column; }
+.carte p { color: var(--texte-doux); }
+.carte ul { margin: 0 0 18px; padding-left: 1.1em; color: var(--texte-doux); }
+.carte .lien-fleche { margin-top: auto; font-weight: 700; text-decoration: none; }
+.carte .lien-fleche::after { content: " →"; }
+.carte__icone { width: 44px; height: 44px; margin-bottom: 16px; }
+
+/* Métiers */
+.metiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--trait); border-left: 1px solid var(--trait); }
+.metier { padding: 28px; border-right: 1px solid var(--trait); border-bottom: 1px solid var(--trait); background: var(--blanc); }
+.metier__num { font-family: var(--police-titre); font-size: .8rem; font-weight: 800; color: var(--bleu); letter-spacing: .1em; }
+.metier p { color: var(--texte-doux); margin: 0; }
+
+/* Références */
+.refs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.ref { display: grid; grid-template-columns: 160px 1fr; background: var(--blanc); border: 1px solid var(--trait); border-radius: var(--rayon); overflow: hidden; }
+.ref__visuel { background: linear-gradient(135deg, #2c4a52, var(--nuit)); color: #9fb7c7; font-size: .78rem; display: flex; align-items: flex-end; padding: 12px; }
+.ref__corps { padding: 20px 22px; }
+.ref__mo { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--bleu); }
+.ref h3 { margin: 4px 0 10px; }
+.ref dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 0; font-size: .92rem; }
+.ref dt { color: var(--texte-doux); }
+.ref dd { margin: 0; font-weight: 600; color: var(--nuit); }
+.statut { display: inline-block; font-size: .78rem; font-weight: 700; padding: 2px 8px; border-radius: 99px; }
+.statut--fait { background: #dff3e6; color: #1d6b3a; }
+.statut--cours { background: #e3f1fb; color: #145a8a; }
+
+/* Méthode */
+.etapes { list-style: none; counter-reset: e; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; padding: 0; margin: 0; }
+.etapes li { counter-increment: e; border-top: 3px solid var(--ciel); padding-top: 14px; }
+.etapes li::before { content: counter(e, decimal-leading-zero); display: block; font-family: var(--police-titre); font-weight: 800; color: var(--bleu); font-size: 1.4rem; }
+.etapes strong { display: block; color: var(--nuit); }
+.etapes span { color: var(--texte-doux); font-size: .95rem; }
+
+/* Acheteurs publics */
+.acheteurs { background: var(--nuit); color: #dbe7ef; border-radius: var(--rayon); padding: 44px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; }
+.acheteurs h2 { color: var(--blanc); }
+.acheteurs ul { margin: 0; padding: 0; list-style: none; }
+.acheteurs li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+.acheteurs li strong { color: var(--blanc); }
+
+/* Pôle IA souveraine */
+.numerique { background: radial-gradient(ellipse 45% 70% at 80% 50%, rgba(110,80,190,.22), transparent 70%), radial-gradient(ellipse 40% 60% at 70% 40%, rgba(102,175,120,.14), transparent 70%), var(--nuit); color: #c9d6dc; position: relative; overflow: hidden; }
+.numerique .conteneur { position: relative; display: grid; grid-template-columns: 1fr 440px; gap: 48px; align-items: center; padding-top: 64px; padding-bottom: 64px; }
+.numerique h2 { color: var(--blanc); margin-top: 16px; }
+.numerique p { max-width: 36em; margin-bottom: 24px; }
+.numerique__badge { display: inline-block; font-family: var(--police-titre); font-weight: 800; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--nuit); background: var(--ciel); padding: 6px 12px; border-radius: 99px; }
+.numerique__visuel { width: 100%; height: auto; }
+.numerique svg.reseau { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* Pied de page */
+.pied { background: #12252c; border-top: 1px solid rgba(255,255,255,.08); color: #9fb7c7; padding: 56px 0 28px; font-size: .95rem; }
+.pied .conteneur { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+.pied__logo { height: 44px; width: auto; margin-bottom: 16px; }
+.pied__liste, .pied__legal { list-style: none; margin: 0 0 18px; padding: 0; }
+.pied__liste li { margin-bottom: 6px; }
+.pied__liste a, .pied__legal a { text-decoration: none; }
+.pied__liste a:hover, .pied__legal a:hover { text-decoration: underline; }
+.pied__bas { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+.pied__legal { display: flex; gap: 18px; margin: 0; }
+.pied h2 { color: var(--blanc); font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; }
+.pied a { color: #cfe2ee; }
+.pied address { font-style: normal; }
+.pied__bas { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.1); padding-top: 18px; font-size: .85rem; }
+
+/* Navigation : page courante */
+.nav a[aria-current="page"] { color: var(--ciel); }
+
+/* Menu mobile (sans JavaScript) */
+.menu-mobile { display: none; margin-left: auto; position: relative; }
+.menu-mobile summary { list-style: none; cursor: pointer; color: var(--blanc); font-weight: 700; padding: 10px 14px; border: 1px solid rgba(255,255,255,.3); border-radius: var(--rayon); }
+.menu-mobile summary::-webkit-details-marker { display: none; }
+.menu-mobile nav { position: absolute; right: 0; top: calc(100% + 10px); background: var(--nuit); border: 1px solid rgba(255,255,255,.12); border-radius: var(--rayon); padding: 10px 0; min-width: 240px; box-shadow: var(--ombre); }
+.menu-mobile ul { list-style: none; margin: 0; padding: 0; }
+.menu-mobile a { display: block; padding: 10px 20px; color: #dbe5ea; text-decoration: none; font-weight: 600; }
+.menu-mobile a[aria-current="page"], .menu-mobile a:hover { color: var(--ciel); }
+
+/* En-tête des pages intérieures */
+.page-tete { position: relative; background: radial-gradient(ellipse 50% 90% at 90% 0%, rgba(102,175,120,.16), transparent 70%), var(--nuit); color: #c9d6dc; padding: 48px 0 56px; }
+.page-tete h1 { color: var(--blanc); max-width: 22em; }
+.fil { font-size: .88rem; margin-bottom: 18px; color: #9fb7c0; }
+.fil a { color: #cfe2e6; }
+.page-tete__chapo { font-size: 1.18rem; max-width: 42em; }
+.page-tete__maj { font-size: .85rem; color: #9fb7c0; margin: 0; }
+
+/* Contenu rédactionnel */
+.prose { max-width: 50em; }
+.prose h2 { margin-top: 1.6em; }
+.prose h3 { margin-top: 1.3em; }
+.prose ul, .prose ol { padding-left: 1.2em; }
+.prose li { margin-bottom: .4em; }
+.mise-en-page { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 56px; align-items: start; }
+.encart { background: var(--papier); border-left: 4px solid var(--ciel); border-radius: var(--rayon); padding: 22px 24px; }
+.encart h2, .encart h3 { font-size: 1.05rem; margin-top: 0; }
+.encart ul { padding-left: 1.1em; margin: 0; }
+.encart--collant { position: sticky; top: 100px; }
+.reponse-directe { font-size: 1.12rem; background: #e9f4ec; border-radius: var(--rayon); padding: 18px 22px; margin-bottom: 1.6em; }
+.tableau { width: 100%; border-collapse: collapse; margin: 1em 0 1.6em; font-size: .97rem; }
+.tableau th, .tableau td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--trait); vertical-align: top; }
+.tableau th { background: var(--papier); color: var(--nuit); font-weight: 700; }
+.tableau-defile { overflow-x: auto; }
+.source { font-size: .85rem; color: var(--texte-doux); }
+.bande-action { background: var(--nuit); color: #c9d6dc; padding: 48px 0; }
+.bande-action .conteneur { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.bande-action h2 { color: var(--blanc); margin: 0 0 6px; font-size: 1.5rem; }
+.bande-action p { margin: 0; }
+
+/* Questions fréquentes */
+.faq details { border-bottom: 1px solid var(--trait); padding: 16px 0; }
+.faq summary { cursor: pointer; font-weight: 700; color: var(--nuit); font-family: var(--police-titre); }
+.faq details p { margin: 12px 0 0; }
+
+/* Formulaire */
+.formulaire { display: grid; gap: 18px; max-width: 640px; }
+.formulaire label { display: block; font-weight: 600; margin-bottom: 6px; }
+.formulaire input, .formulaire select, .formulaire textarea { width: 100%; font: inherit; padding: 12px 14px; border: 1px solid #b9c6cf; border-radius: var(--rayon); background: var(--blanc); color: var(--texte); }
+.formulaire input:focus, .formulaire select:focus, .formulaire textarea:focus { outline: 3px solid var(--ciel); outline-offset: 1px; border-color: var(--bleu); }
+.formulaire .case { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; }
+.formulaire .case input { width: auto; margin-top: 5px; }
+.formulaire .piege { position: absolute; left: -9999px; }
+.formulaire button { justify-self: start; border: 0; cursor: pointer; font: inherit; }
+.deux-colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .nav, .entete__action { display: none; }
+  .menu-mobile { display: block; }
+}
+@media (max-width: 960px) {
+  .mise-en-page { grid-template-columns: 1fr; gap: 32px; }
+  .encart--collant { position: static; }
+  .pied .conteneur { grid-template-columns: 1fr 1fr; }
+  .numerique .conteneur { grid-template-columns: 1fr; gap: 24px; }
+  .numerique__visuel { max-width: 300px; margin: 0 auto; }
+  .heros__anneaux { width: 360px; opacity: .45; }
+  .entete .btn { display: none; }
+  .nav { display: none; }
+  .heros .conteneur, .acheteurs, .pied .conteneur { grid-template-columns: 1fr; }
+  .grille-3, .metiers, .refs { grid-template-columns: 1fr; }
+  .preuves ul { grid-template-columns: 1fr 1fr; }
+  .etapes { grid-template-columns: 1fr 1fr; }
+  .ref { grid-template-columns: 1fr; }
+  .ref__visuel { min-height: 120px; }
+}
+@media (max-width: 560px) {
+  .pied .conteneur, .deux-colonnes { grid-template-columns: 1fr; }
+  .preuves ul, .etapes { grid-template-columns: 1fr; }
+  .acheteurs { padding: 28px; }
+  .section { padding: 56px 0; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Compléments v6 */
+.h3 { font-size: 1.2rem; font-weight: 700; }
+.metier--lien { display: block; text-decoration: none; color: inherit; transition: background .15s; }
+.metier--lien:hover { background: var(--papier); }
+.metier--lien:hover h2 { color: var(--bleu); }
+
+/* Filigrane hexagonal (v7) : motif de la charte sur toutes les pages */
+:root {
+  --hexa-sombre: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104'%3E%3Cpath d='M30 0 L60 17.3 L60 52 L30 69.3 L0 52 L0 17.3 Z M30 69.3 L30 104' fill='none' stroke='%2366af78' stroke-opacity='.10'/%3E%3Ccircle cx='30' cy='0' r='1.6' fill='%2366af78' fill-opacity='.3'/%3E%3C/svg%3E");
+  --hexa-clair: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104'%3E%3Cpath d='M30 0 L60 17.3 L60 52 L30 69.3 L0 52 L0 17.3 Z M30 69.3 L30 104' fill='none' stroke='%2312252c' stroke-opacity='.045'/%3E%3C/svg%3E");
+}
+.page-tete { background: radial-gradient(ellipse 50% 90% at 90% 0%, rgba(102,175,120,.16), transparent 70%), var(--hexa-sombre), var(--nuit); }
+.bande-action { background: var(--hexa-sombre), var(--nuit); }
+.pied { background: var(--hexa-sombre), #12252c; }
+.acheteurs { background: var(--hexa-sombre), var(--nuit); }
+.section--papier { background: var(--hexa-clair), var(--papier); }
+.section { background-image: var(--hexa-clair); }
+.preuves { background: var(--hexa-clair), var(--papier); }
