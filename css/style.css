@@ -278,3 +278,16 @@ p { margin: 0 0 1em; }
 .btn--trait { border-color: var(--nuit); color: var(--nuit); }
 .btn--trait:hover { background: var(--papier); }
 @media (max-width: 960px) { .vedettes__grille { grid-template-columns: 1fr; } }
+
+/* Blog (v9) */
+.grille-articles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+.carte--article h3 { font-size: 1.12rem; margin: 6px 0 10px; }
+.carte--article h3 a { color: var(--nuit); text-decoration: none; }
+.carte--article h3 a:hover { color: var(--bleu); }
+.carte__date { font-size: .85rem; color: var(--texte-doux); margin: 0; }
+.badge-brouillon { display: inline-block; background: #fff4cc; color: #5c4400; font-size: .75rem; font-weight: 700; padding: 1px 8px; border-radius: 99px; margin-left: 6px; }
+.section--courte { padding: 0 0 56px; }
+.sources { font-size: .9rem; word-break: break-all; }
+.lien-fleche { font-weight: 700; text-decoration: none; }
+.lien-fleche::after { content: " →"; }
+@media (max-width: 960px) { .grille-articles { grid-template-columns: 1fr; } }
