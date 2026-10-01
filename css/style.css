@@ -63,7 +63,12 @@ p { margin: 0 0 1em; }
 /* Héros */
 .heros { position: relative; overflow: hidden; background: radial-gradient(ellipse 60% 70% at 85% 30%, rgba(102,175,120,.18), transparent 70%), radial-gradient(ellipse 50% 60% at 10% 110%, rgba(60,110,150,.22), transparent 70%), var(--nuit); color: #dbe7ef; padding: 96px 0 80px; }
 .heros__motif { position: absolute; inset: 0; pointer-events: none; }
-.heros__anneaux { position: absolute; right: 0; top: 0; width: 640px; height: auto; opacity: .9; pointer-events: none; }
+.heros__anneaux { position: absolute; width: 1006px; height: 1006px; right: -503px; top: -503px; opacity: .9; pointer-events: none; }
+.heros__anneaux img { position: absolute; inset: 0; width: 100%; height: 100%; will-change: transform; animation: tourne linear infinite; }
+.heros__anneaux .a1 { animation-duration: 80s; }
+.heros__anneaux .a2 { animation-duration: 105s; animation-direction: reverse; }
+.heros__anneaux .a3 { animation-duration: 130s; }
+@keyframes tourne { to { transform: rotate(360deg); } }
 .heros .conteneur { position: relative; display: grid; grid-template-columns: 1.25fr .75fr; gap: 48px; align-items: center; }
 .heros h1 { color: var(--blanc); }
 .heros h1 span { color: var(--soleil); }
@@ -134,9 +139,9 @@ p { margin: 0 0 1em; }
 
 /* Pôle IA souveraine */
 .numerique { background: radial-gradient(ellipse 45% 70% at 80% 50%, rgba(110,80,190,.22), transparent 70%), radial-gradient(ellipse 40% 60% at 70% 40%, rgba(102,175,120,.14), transparent 70%), var(--nuit); color: #c9d6dc; position: relative; overflow: hidden; }
-.numerique .conteneur { position: relative; display: grid; grid-template-columns: 1fr 440px; gap: 48px; align-items: center; padding-top: 64px; padding-bottom: 64px; }
-.numerique h2 { color: var(--blanc); margin-top: 16px; }
-.numerique p { max-width: 36em; margin-bottom: 24px; }
+.numerique .conteneur { position: relative; display: grid; grid-template-columns: 1fr 230px; gap: 40px; align-items: center; padding-top: 32px; padding-bottom: 32px; }
+.numerique h2 { color: var(--blanc); margin: 12px 0 8px; font-size: 1.45rem; }
+.numerique p { max-width: 46em; margin-bottom: 16px; }
 .numerique__badge { display: inline-block; font-family: var(--police-titre); font-weight: 800; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--nuit); background: var(--ciel); padding: 6px 12px; border-radius: 99px; }
 .numerique__visuel { width: 100%; height: auto; }
 .numerique svg.reseau { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
@@ -224,8 +229,8 @@ p { margin: 0 0 1em; }
   .encart--collant { position: static; }
   .pied .conteneur { grid-template-columns: 1fr 1fr; }
   .numerique .conteneur { grid-template-columns: 1fr; gap: 24px; }
-  .numerique__visuel { max-width: 300px; margin: 0 auto; }
-  .heros__anneaux { width: 360px; opacity: .45; }
+  .numerique__visuel { max-width: 180px; margin: 0 auto; }
+  .heros__anneaux { width: 560px; height: 560px; right: -280px; top: -280px; opacity: .45; }
   .entete .btn { display: none; }
   .nav { display: none; }
   .heros .conteneur, .acheteurs, .pied .conteneur { grid-template-columns: 1fr; }
@@ -241,7 +246,7 @@ p { margin: 0 0 1em; }
   .acheteurs { padding: 28px; }
   .section { padding: 56px 0; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .heros__anneaux img { animation: none; } }
 
 /* Compléments v6 */
 .h3 { font-size: 1.2rem; font-weight: 700; }
@@ -261,3 +266,15 @@ p { margin: 0 0 1em; }
 .section--papier { background: var(--hexa-clair), var(--papier); }
 .section { background-image: var(--hexa-clair); }
 .preuves { background: var(--hexa-clair), var(--papier); }
+
+/* Deux expertises vedettes (v8) */
+.vedettes { padding-top: 56px; padding-bottom: 24px; }
+.vedettes__grille { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.vedette { background: var(--blanc); border: 1px solid var(--trait); border-top: 4px solid var(--ciel); border-radius: var(--rayon); padding: 32px; box-shadow: var(--ombre); }
+.vedette h2 { font-size: 1.7rem; }
+.vedette p { color: var(--texte-doux); }
+.vedette ul { padding-left: 1.1em; color: var(--texte); margin-bottom: 22px; }
+.vedette__liens { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn--trait { border-color: var(--nuit); color: var(--nuit); }
+.btn--trait:hover { background: var(--papier); }
+@media (max-width: 960px) { .vedettes__grille { grid-template-columns: 1fr; } }
