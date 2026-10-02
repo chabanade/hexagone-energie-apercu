@@ -298,3 +298,17 @@ p { margin: 0 0 1em; }
 .figure { margin: 1.6em 0; }
 .figure img { width: 100%; height: auto; border-radius: var(--rayon); }
 .figure figcaption { font-size: .88rem; color: var(--texte-doux); margin-top: 8px; }
+
+/* Pages de référence (v11) */
+.galerie { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 1em 0 1.6em; }
+.galerie figure { margin: 0; }
+.galerie img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--rayon); display: block; }
+.galerie figcaption { font-size: .85rem; color: var(--texte-doux); margin-top: 6px; }
+.figure--etroite { max-width: 260px; float: right; margin: 0 0 1em 1.5em; }
+.fiche { display: grid; grid-template-columns: 1fr; gap: 2px; margin: 0 0 18px; font-size: .93rem; }
+.fiche dt { font-weight: 700; color: var(--nuit); margin-top: 8px; }
+.fiche dd { margin: 0; color: var(--texte-doux); }
+.note-discrete { font-size: .78rem; color: #6b7a82; margin-top: 2.5em; }
+.ref__lien { display: inline-block; margin-top: 10px; font-weight: 700; text-decoration: none; }
+.ref__lien::after { content: " →"; }
+@media (max-width: 560px) { .galerie { grid-template-columns: 1fr; } .figure--etroite { float: none; margin: 1em 0; } }

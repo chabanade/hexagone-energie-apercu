@@ -6,6 +6,8 @@ ErrorDocument 404 /404.html
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
+# ne jamais rediriger les vérifications Let's Encrypt (renouvellement des certificats)
+RewriteRule ^\.well-known/acme-challenge/ - [L]
 # hexagone-energie.com et variantes sans www ou en http -> https://www.hexagone-energie.fr
 RewriteCond %{HTTP_HOST} !^www\.hexagone-energie\.fr$ [NC,OR]
 RewriteCond %{HTTPS} off
