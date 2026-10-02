@@ -305,10 +305,16 @@ p { margin: 0 0 1em; }
 .galerie img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--rayon); display: block; }
 .galerie figcaption { font-size: .85rem; color: var(--texte-doux); margin-top: 6px; }
 .figure--etroite { max-width: 260px; float: right; margin: 0 0 1em 1.5em; }
-.fiche { display: grid; grid-template-columns: 1fr; gap: 2px; margin: 0 0 18px; font-size: .93rem; }
-.fiche dt { font-weight: 700; color: var(--nuit); margin-top: 8px; }
-.fiche dd { margin: 0; color: var(--texte-doux); }
+.fiche-chantier { display: grid; grid-template-columns: 1fr; gap: 2px; margin: 0 0 18px; font-size: .93rem; }
+.fiche-chantier dt { font-weight: 700; color: var(--nuit); margin-top: 8px; }
+.fiche-chantier dd { margin: 0; color: var(--texte-doux); }
 .note-discrete { font-size: .78rem; color: #6b7a82; margin-top: 2.5em; }
 .ref__lien { display: inline-block; margin-top: 10px; font-weight: 700; text-decoration: none; }
 .ref__lien::after { content: " →"; }
 @media (max-width: 560px) { .galerie { grid-template-columns: 1fr; } .figure--etroite { float: none; margin: 1em 0; } }
+
+/* Photo vedette (v12) */
+.vedette__photo { width: calc(100% + 64px); max-width: none; margin: -32px -32px 20px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--rayon) var(--rayon) 0 0; display: block; }
+.vedette__photo { height: auto; }
+.heros .fiche { position: relative; z-index: 1; background: rgba(18, 37, 44, .88); backdrop-filter: blur(2px); }
+.heros__anneaux { opacity: .7; }
